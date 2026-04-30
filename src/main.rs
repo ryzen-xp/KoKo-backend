@@ -2,10 +2,11 @@ use axum::Router;
 use database::connect_db;
 use dotenv::dotenv;
 use std::{env, sync::Arc};
+use errors::AppError;
 
 #[derive(Clone)]
 struct AppState {
-    db: sqlx::Pool<sqlx::Postgres>,
+   db : sqlx::Pool<sqlx::Postgres>,
 }
 
 #[tokio::main]
@@ -32,3 +33,4 @@ async fn main() {
 }
 
 mod database;
+mod errors;
