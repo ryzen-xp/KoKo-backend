@@ -20,3 +20,23 @@ pub struct User {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
 }
+
+
+//  DTO's of Users 
+
+#[derive(Debug , Deserialize)]
+pub struct  CreateUserDto {
+    pub username : String , 
+    pub  handle : String , 
+    pub email : String , 
+    pub password : String 
+}
+
+
+pub struct UpdateUserDto {
+    pub username :Option<String> , 
+    pub bio : Option<String> , 
+    pub avatar_url : Option<String> ,
+    pub banner_utl : Option<String> , 
+    pub is_private : Option<String>
+}
